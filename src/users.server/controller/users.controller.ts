@@ -12,7 +12,7 @@ export class UsersController {
   @UseGuards(JwtMiddleware)
   @Post('save-info')
   @HttpCode(200)
-  async saveUserInfo(@Request() req, @Body() body: { telegram: string, github: string, name: string, lastname: string }): Promise<string> {
+  async saveUserInfo(@Request() req, @Body() body: { telegram: string, github: string, name: string, lastname: string, stack: string }): Promise<string> {
     try {
       
 
@@ -21,6 +21,7 @@ export class UsersController {
       const { github } = body;
       const { name } = body;
       const { lastname } = body;
+      const { stack } = body;
 
       console.log('Received Request:', {
         user_id,
@@ -30,7 +31,7 @@ export class UsersController {
         body,
       });
 
-      const result = await this.usersService.SaveUserInfo(user_id, telegram, github, name, lastname);
+      const result = await this.usersService.SaveUserInfo(user_id, telegram, github, name, lastname, stack);
       return result;
     } catch (error) {
       console.error('Ошибка:', error);

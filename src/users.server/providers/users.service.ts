@@ -5,7 +5,7 @@ import { PrismaService } from "src/auth.server/providers/prisma/prisma.service";
 export class UsersService {
     constructor(private prisma: PrismaService) {}
 
-    async SaveUserInfo(user_id: string, telegram: string, github: string, name: string, lastname:string): Promise<string> {
+    async SaveUserInfo(user_id: string, telegram: string, github: string, name: string, lastname:string, stack: string): Promise<string> {
         try {
             if (!user_id) {
                 throw new NotFoundException("Не указан user_id.");
@@ -17,6 +17,7 @@ export class UsersService {
                     github,
                     name,
                     lastname,
+                    stack,
                 },
             });
 
