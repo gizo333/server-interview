@@ -28,7 +28,6 @@ export class deleteInfoController {
   
       return { success: true, message: 'Элемент стека успешно удален.' };
     } catch (error) {
-      console.error('Ошибка при удалении стека:', error.message);
       throw new InternalServerErrorException('Внутренняя ошибка сервера');
     }
   }
