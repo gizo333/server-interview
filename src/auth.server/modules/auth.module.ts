@@ -1,4 +1,4 @@
-// src/app.module.ts
+
 import { Module } from '@nestjs/common';
 import { PrismaService } from '../providers/prisma/prisma.service';
 import { AuthService } from '../providers/auth.service';
