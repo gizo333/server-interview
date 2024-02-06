@@ -1,4 +1,4 @@
-// src/auth/auth.service.ts
+
 import { HttpCode, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { PrismaService } from 'src/auth.server/providers/prisma/prisma.service';
 import  hashPassword  from 'src/utils/hashPassword';
