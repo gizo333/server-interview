@@ -20,10 +20,10 @@ export class deleteInfoController {
   
       const stackArray = userData.stack ? userData.stack.split(',') : [];
       
-      // Удаление элемента из массива
+     
       stackArray.splice(index, 1);
   
-      // Обновление данных пользователя
+      
       await this.deleteInfoService.updateStack(user_id, stackArray);
   
       return { success: true, message: 'Элемент стека успешно удален.' };
