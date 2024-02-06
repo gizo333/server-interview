@@ -16,7 +16,7 @@ export class infoUsersService {
       throw new NotFoundException('Пользователь не найден.');
     }
 
-    // Возвращаем только необходимые поля, включая stack
+   
     const {stack } = user;
 
     return {
