@@ -12,7 +12,7 @@ export class infoUsersController {
     try {
       const { user_id } = req.user;
 
-      // Добавьте ваш метод получения информации о пользователе из базы данных
+    
       const userInfo = await this.infoUsersService.getUserInfo(user_id);
 
       return userInfo;
