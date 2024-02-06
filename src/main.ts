@@ -14,7 +14,7 @@ async function bootstrap() {
 
   const logger = new Logger();
 
-  // Добавляем логирование к  приложениям
+
   appAuth.useLogger(logger);
   appRegister.useLogger(logger);
   appUsersInfo.useLogger(logger);
@@ -22,7 +22,7 @@ async function bootstrap() {
   appUsersInfo.use(new JwtMiddleware().use); // middleware для расшивровки токена и извлечения из него user_id
   
 
-  // Запускаем  приложения параллельно
+
   await Promise.all([
     appAuth.listen(4199), // сервис отвечает за авторизацию
     appRegister.listen(4201), // сервис отвечает за регистрацию
