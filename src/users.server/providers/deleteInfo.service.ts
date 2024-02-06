@@ -16,10 +16,10 @@ export class DeleteInfoService {
 
   async updateStack(user_id: string, stackArray: string[]) {
     try {
-      // Преобразовать обновленный массив в строку
+
       const updatedStack = stackArray.join(',');
   
-      // Обновление данных пользователя
+    
       await this.prisma.user.update({
         where: {
           user_id,
